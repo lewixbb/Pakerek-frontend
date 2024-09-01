@@ -1,0 +1,23 @@
+<mat-card class="tile-card">
+    <div class="btn" routerLink='{{product.id}}'>
+      <mat-card-header class="d-block">
+        <mat-card-title class="d-inline-block container-fluid m-0 p-0">
+          <div class="float-start">{{product.name}} {{product.size}}</div>
+          <div class="float-end primary fw-bold fs-2">{{product.price|currency:'zł':'code'}}</div>
+        </mat-card-title>
+        <mat-card-subtitle class="text-start">{{product.type}}</mat-card-subtitle>
+      </mat-card-header>
+    </div>
+    <img class="btn" routerLink='{{product.id}}' mat-card-image src="{{product.img}}" alt="">
+    <mat-card-content>
+      <div class="float-start fw-bold">
+        Producent : {{product.producer}}
+      </div>
+    </mat-card-content>
+  <mat-card-actions>
+    <button class="container-fluid" mat-raised-button color="primary" (click)="addToBasket()">
+      DODAJ DO KOSZYKA
+    </button>
+  </mat-card-actions>
+</mat-card>
+

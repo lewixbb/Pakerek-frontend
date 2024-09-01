@@ -1,0 +1,53 @@
+<button mat-button class="nav-link text-light text-center"  aria-labelledby="basket" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside">
+  <mat-icon matBadge="{{basketAmount}}" matBadgeHidden="{{!basketAmount}}"  matBadgeColor="warn" matBadgePosition="below after" matBadgeSize="small" class="w-auto h-auto fs-3">shopping_cart</mat-icon>
+</button>
+<ul class="dropdown-menu dropdown-menu-end align-content-center pb-0 pt-0 rounded-1" id="basket" >
+    <div class="d-block bsk-tab-min">
+      <div class="modal-body container bsk-row-min">
+
+          <ng-container *ngIf="!basketAmount">
+            <li class="text-center align-content-center fs-4 fw-bold text-secondary">Twój koszyk jest pusty</li>
+          </ng-container>
+
+        <ng-container >
+          <div class="" *ngFor="let basketItem of basketItems">
+            <li class="d-flex p-1 mb-3 pb-3 border-bottom">
+              <img src="{{basketItem.products.img}}" alt="">
+              <div class="container-fluid text-wrap align-content-between align-text-top">
+                <div class="h-75 fw-bold">
+                  {{basketItem.products.name}}
+                </div>
+                <div class="d-flex fs-7">
+                  <div>ilość:</div><div class="ps-1">{{basketItem.quantity}}</div>
+                  <div class="ps-2">masa:</div><div class="ps-1">{{basketItem.products.size}}</div>
+                </div>
+              </div>
+              <div class="d-inline-block text-nowrap">
+                <div class="h-25 text-end fw-bold primary">{{basketItem.groupPrice | currency :'zł':'code'}}</div>
+                <div class="h-25 mb-1">
+                  <div class="text-end fs-8" *ngIf="basketItem.quantity > 1" >za sztukę:{{basketItem.products.price | currency :'zł':'code'}}</div>
+                </div>
+                <button mat-stroked-button color="primary" class="float-end" (click)="removeItem(basketItem.products.id)" style="border-width: 2px; border-color: #3F51B5">
+                  <mat-icon>delete</mat-icon>
+                  <div class="text-end">usuń</div>
+                </button>
+              </div>
+            </li>
+
+          </div>
+          <div class="d-flex pb-1">
+            <div class="container d-block text-wrap fw-bold fs-7">Łączna wartość produktów: </div>
+            <div class="text-end text-nowrap fw-bold pe-1">{{totalPrice | currency :'zł':'code'}}</div>
+          </div>
+          <div class="m-2 d-flex" *ngIf="basketItems.length">
+            <button class="container me-2" (click)="onClose()" routerLink="/basket" mat-stroked-button color="primary" style="border-width: 2px; border-color: #3F51B5">POKAŻ KOSZYK</button>
+            <button class="container ms-2" (click)="onClose()" mat-raised-button color="primary">DO KASY</button>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+</ul>
+
+
+
+

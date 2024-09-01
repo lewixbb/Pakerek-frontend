@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import "node_modules/bootstrap/scss/bootstrap";
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: $dark;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif
+}
+
+Main {
+  padding-top: 60px;
+  min-height: calc(100% - 310px);
+  height: auto;
+  background-color: white;
+}
+
+.fs-7 {
+  font-size: 0.9rem;
+}
+
+.fs-8 {
+  font-size: 0.8rem;
+}
+
+.primary {
+  color: #3F51B5;
+}

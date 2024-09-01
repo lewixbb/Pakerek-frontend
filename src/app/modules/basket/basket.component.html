@@ -1,0 +1,30 @@
+<ng-container *ngIf="!basketAmount">
+  <div class="text-center align-content-center fs-4 fw-bold text-secondary">Twój koszyk jest pusty</div>
+</ng-container>
+<ng-container *ngIf="basketAmount">
+  <div class="" *ngFor="let basketItem of basketItems">
+    <li class="d-flex p-1 mb-3 pb-3 border-bottom">
+      <img src="{{basketItem.products.img}}" alt="">
+      <div class="container-fluid text-wrap align-content-between align-text-top">
+        <div class="h-75 fw-bold">
+          {{basketItem.products.name}}
+        </div>
+        <div class="d-flex fs-7">
+          <div>ilość:</div><div class="ps-1">{{basketItem.quantity}}</div>
+          <div class="ps-2">masa:</div><div class="ps-1">{{basketItem.products.size}}</div>
+        </div>
+      </div>
+      <div class="d-inline-block text-nowrap">
+        <div class="h-25 text-end fw-bold primary">{{basketItem.groupPrice | currency :'zł':'code'}}</div>
+        <div class="h-25 mb-1">
+          <div class="text-end fs-8" *ngIf="basketItem.quantity > 1" >za sztukę:{{basketItem.products.price | currency :'zł':'code'}}</div>
+        </div>
+        <button mat-stroked-button color="primary" class="float-end" (click)="removeItem(basketItem.products.id)" style="border-width: 2px; border-color: #3F51B5">
+          <mat-icon>delete</mat-icon>
+          <div class="text-end">usuń</div>
+        </button>
+      </div>
+    </li>
+  </div>
+</ng-container>
+

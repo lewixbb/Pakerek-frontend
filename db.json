@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "WPC",
+      "size": "900g",
+      "price": 120,
+      "producer": "DNA",
+      "type": "Odżywka białkowa",
+      "description": "befafeafa faefaw",
+      "img": "./assets/Product/wpc_dna_zip_900g.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Serwatka",
+      "size": "900g",
+      "price": 120,
+      "producer": "DNA",
+      "type": "Odżywka białkowa",
+      "description": "befafeafa faefaw",
+      "img": "./assets/Product/wpc_dna_zip_900g.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Keratyna",
+      "size": "900g",
+      "price": 120,
+      "producer": "DNA",
+      "type": "Odżywka białkowa",
+      "description": "befafeafa faefaw",
+      "img": "./assets/Product/wpc_dna_zip_900g.jpg"
+    },
+    {
+      "id": 4,
+      "name": "WPC",
+      "size": "900g",
+      "price": 120,
+      "producer": "DNA",
+      "type": "Odżywka białkowa",
+      "description": "befafeafa faefaw",
+      "img": "./assets/Product/wpc_dna_zip_900g.jpg"
+    },
+    {
+      "id": 5,
+      "name": "WPC",
+      "size": "900g",
+      "price": 120,
+      "producer": "DNA",
+      "type": "Odżywka białkowa",
+      "description": "befafeafa faefaw",
+      "img": "./assets/Product/wpc_dna_zip_900g.jpg"
+    }
+  ]
+}

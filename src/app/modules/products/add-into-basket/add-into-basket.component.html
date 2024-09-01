@@ -1,0 +1,21 @@
+<div class="border bg-light p-2">
+  <div class="m-3">
+    <div class="text-primary fs-1 fw-bold m-3 p-2 text-center lh-1">415,00 zł</div>
+    <div class="container">
+      <div class="container d-flex">
+        <div class="p-2 fw-bold">ILOŚĆ :</div>
+        <div class="mx-2 d-flex">
+          <div class="p-1 btn" (click)="subtractPiece()"><mat-icon>remove_circle</mat-icon></div>
+          <div class="p-2 fw-bold">{{quantity}}</div>
+          <div class="p-1 btn" (click)="addPiece()"><mat-icon>add_circle</mat-icon></div>
+          <div class="p-2 fw-bold">z pozostałych {{limitedQuantity}} sztuk</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="m-3">
+    <button class="container-fluid" mat-raised-button color="primary" (click)="addToBasket()">
+      Dodaj do Koszyka
+    </button>
+  </div>
+</div>
