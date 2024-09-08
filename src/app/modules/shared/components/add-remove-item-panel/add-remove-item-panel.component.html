@@ -1,0 +1,11 @@
+<div class="container" [ngStyle]="{'display' : breakLine ? 'block' : 'flex'}">
+  <div class="d-flex align-items-center">
+    <div class="ps-2 fw-bold text-nowrap">ILOŚĆ :</div>
+    <div class="mx-2 d-flex align-items-center">
+      <div class="m-0 p-0 pt-1 ms-2 btn primary" (click)="subtractPiece()"><mat-icon>remove_circle</mat-icon></div>
+      <div class="fw-bold ms-2">{{quantity}}</div>
+      <div class="m-0 p-0 pt-1 ms-2 btn primary" (click)="addPiece()"><mat-icon>add_circle</mat-icon></div>
+    </div>
+  </div>
+  <div class="fw-bold text-nowrap d-flex align-items-center">z pozostałych {{limitedQuantity}} sztuk</div>
+</div>

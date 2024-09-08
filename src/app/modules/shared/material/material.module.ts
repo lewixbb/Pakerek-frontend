@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { A11yModule } from '@angular/cdk/a11y';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [],
@@ -15,6 +16,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatCardModule,
     A11yModule,
     MatBadgeModule,
+    MatFormFieldModule,
   ],
 })
 export class MaterialModule {}

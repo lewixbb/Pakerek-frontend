@@ -1,0 +1,24 @@
+<div class="border bg-light p-2 rounded-1 summary-tab">
+  <div class="m-3">
+    <div class="text-center fs-5 pb-3">Podsumowanie</div>
+    <div class="d-flex p-1">
+      <div>Wartość produktów:</div><div class="ms-auto">{{basket.billing.totalPrice | currency: 'zł': 'code'}}</div>
+    </div>
+    <div class="d-flex p-1">
+      <div>Wartość rabatu:</div><div class="ms-auto text-danger">{{basket.billing.discount | percent}}</div>
+    </div>
+    <div class="d-flex p-1">
+      <div>Ilość produktów:</div><div class="ms-auto">{{basket.inTotal}} szt.</div>
+    </div>
+    <div class="d-flex p-1 pb-2 border-bottom ">
+      <div>Dostawa:</div><div class="ms-auto text-end text-wrap w-50">Wybierz dostawę i metodę płatności w kolejnym kroku</div>
+    </div>
+    <div class="d-flex px-1 py-3 border-bottom mb-3">
+    <app-coupon></app-coupon>
+    </div>
+    <div class="d-flex p-1 mb-3 fw-bold fs-6">
+      <div>Do zapłaty (z Vat):</div><div class="ms-auto primary">{{basket.billing.grossPrice | currency : 'zł': 'code'}}</div>
+    </div>
+    <button class="container" type="button" (click)="nextStep()" mat-raised-button color="primary">DO KASY</button>
+  </div>
+</div>

@@ -50,5 +50,21 @@
       "description": "befafeafa faefaw",
       "img": "./assets/Product/wpc_dna_zip_900g.jpg"
     }
+  ],
+  "coupons": [
+    {
+      "id": 1,
+      "name": "test",
+      "amount": 0.1,
+      "createdDate": "2024/02/1",
+      "expiryDate": "2024/12/1"
+    },
+    {
+      "id": 2,
+      "name": "late",
+      "amount": 0.1,
+      "createdDate": "2024/02/1",
+      "expiryDate": "2024/05/1"
+    }
   ]
 }

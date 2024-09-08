@@ -1,0 +1,30 @@
+<li class="d-flex p-1 mb-3 pb-3 border-bottom basket-list ">
+  <div class="d-flex">
+    <img class="img-fluid btn m-0 p-0" src="{{basketItem.products.img}}" alt="" routerLink="/produkty/{{basketItem.products.id}}">
+    <div class="d-block w-100">
+      <div class="d-flex w-auto h-50 m-2 pt-3">
+        <div class="btn h-auto fs-5 fw-bold w-auto m-0 p-0" routerLink="/produkty/{{basketItem.products.id}}">
+          {{basketItem.products.name}}
+        </div>
+        <div class="d-block w-100">
+          <div class="h-25 fw-bold primary fs-4 text-end">{{basketItem.groupPrice | currency :'zł':'code'}}</div>
+          <div class="h-25 mb-1 mt-2 text-end">
+            <div class="fs-8" *ngIf="basketItem.quantity > 1" >za sztukę:{{basketItem.products.price | currency :'zł':'code'}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex w-100 mt-4">
+        <div class="d-flex align-items-center">
+          <div class="ps-2">masa:</div><div class="ps-1">{{basketItem.products.size}}</div>
+        </div>
+        <div class="m-auto">
+          <app-add-remove-item-panel class="" [limitedQuantity]="12" [quantity]="basketItem.quantity" (quantityFeedback)="quantityActualization($event)"></app-add-remove-item-panel>
+        </div>
+        <button mat-stroked-button color="primary" class="ms-auto me-2" (click)="remove()" style="border-width: 2px; border-color: #3F51B5">
+          <mat-icon>delete</mat-icon>
+          <div class="text-end">usuń</div>
+        </button>
+      </div>
+    </div>
+  </div>
+</li>

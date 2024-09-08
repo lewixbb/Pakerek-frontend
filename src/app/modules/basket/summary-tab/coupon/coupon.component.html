@@ -1,0 +1,9 @@
+<div class="input-group">
+  <input class="form-control text-center" id="coupon" aria-describedby="couponGroup" type="text" [(ngModel)]="couponName" name="couponName">
+  <button mat-stroked-button type="button" color="primary" style="border-width: 2px; border-color: #3F51B5; width: 50%; height: auto" id="couponGroup" (click)="useCoupon()">
+    Kod rabatowy
+  </button>
+</div>
+<ng-container *ngIf="feedbackText">
+  <app-alert [text]="feedbackText" [type]="alertType" ></app-alert>
+</ng-container>
