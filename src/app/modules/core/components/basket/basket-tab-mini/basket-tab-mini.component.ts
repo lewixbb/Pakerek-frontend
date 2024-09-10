@@ -11,7 +11,7 @@ import { BasketService } from '../../../services/basket.service';
 export class BasketTabMiniComponent implements OnInit, OnDestroy {
   public basketAmount = this.basketService.basket.inTotal ?? 0;
   public basketItems: Order[] = this.basketService.basket.orders ?? [];
-  public totalPrice = this.basketService.basket?.billing?.totalPrice ?? 0;
+  public totalPrice = this.basketService.basket?.billing?.grossPrice ?? 0;
   private sub = new Subscription();
 
   constructor(private basketService: BasketService) {}
@@ -21,7 +21,7 @@ export class BasketTabMiniComponent implements OnInit, OnDestroy {
       next: (basket) => {
         this.basketAmount = basket.inTotal;
         this.basketItems = basket.orders;
-        this.totalPrice = basket.billing.totalPrice;
+        this.totalPrice = basket.billing.grossPrice;
       },
     });
   }
