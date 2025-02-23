@@ -1,0 +1,25 @@
+<div>
+  <form [formGroup]="checkboxes">
+    <ng-container>
+      <div *ngFor="let checkbox of checkboxesGroup; index as i">
+        <div class="w-100 d-flex" style="">
+        <mat-checkbox disableRipple color="primary"
+                      [formControlName]="checkbox"
+                      (change)="checkboxActivate(checkbox)" >
+        </mat-checkbox>
+          <div class="align-content-center w-100">
+            <div class="d-inline-block">{{data[i].name}}</div>
+            <ng-container *ngIf="data">
+              <div class="d-inline-block float-end">{{data[i].price|currency: 'zł':'code'}}</div>
+            </ng-container>
+          </div>
+        </div>
+        <ng-container *ngIf="isActive===checkbox && data[i].comments">
+          <div *ngIf="data[i].comments">
+            <div class="text-secondary fs-8 pb-2" style="margin-left: 45px; margin-right: 45px">{{data[i].comments}}</div>
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </form>
+</div>

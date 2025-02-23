@@ -37,15 +37,4 @@ export class DiscountApiService {
   getCoupons(): Observable<CouponResponse[]> {
     return this.http.get<Coupon[]>(`${this.apiUrl}/coupons/`);
   }
-
-  // getCoupon(id: number): Observable<Coupon> {
-  //   return this.http
-  //     .get<CouponResponse>(`${this.apiUrl}/coupons/${id}`)
-  //     .pipe(
-  //       map(
-  //         ({ id, name, amount, createdDate, expiryDate }) =>
-  //           new Coupon(id, name, amount, createdDate, expiryDate)
-  //       )
-  //     );
-  // }
 }

@@ -1,0 +1,37 @@
+<div class="login-wrapper">
+  <form #login='ngForm' (ngSubmit)="onLogin(login)">
+    <div>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="login@login.com"
+               [(ngModel)]="loginData.username" name="username"
+               required email>
+          <mat-error *ngIf="login.controls?.['username']
+                && login.controls?.['username']?.invalid
+                && login.controls?.['username']?.touched">
+            <app-error-message [controls]="login.controls['username']"></app-error-message>
+          </mat-error>
+      </mat-form-field>
+    </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="hasło"
+                 [(ngModel)]="loginData.password" name="password"
+                 required minlength="6" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="login.controls?.['password']?.invalid
+                && login.controls?.['password']?.touched">
+            <app-error-message [controls]="login.controls['password']"></app-error-message>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    <div class="fs-7 d-flex align-items-center justify-content-center mt-3">
+      Nie masz konta? <a class="text-reset text-decoration-none ms-2" routerLink="/register">Zarejestruj się! </a>
+    </div>
+    <div class="d-flex justify-content-end mt-3">
+      <button type="submit" mat-raised-button color="primary">Zaloguj</button>
+    </div>
+  </form>
+
+</div>

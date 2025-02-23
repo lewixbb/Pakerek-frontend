@@ -10,22 +10,26 @@ import localePl from '@angular/common/locales/pl';
 import { ProductsModule } from './modules/products/products.module';
 import { HomeModule } from './modules/home/home.module';
 import { HttpClientModule } from '@angular/common/http';
-import { BasketModule } from './modules/basket/basket.module';
+import { CheckoutModule } from './modules/checkout/checkout.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { ManagmentModule } from './modules/managment/managment.module';
 
 registerLocaleData(localePl);
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BasketModule,
+    CheckoutModule,
     ProductsModule,
     HomeModule,
+    AuthModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,
     HttpClientModule,
+    ManagmentModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pl' }],
   bootstrap: [AppComponent],

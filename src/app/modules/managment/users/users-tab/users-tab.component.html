@@ -1,0 +1,56 @@
+<mat-form-field>
+  <mat-label>Filtrowanie:</mat-label>
+  <input matInput [formControl]="filterValue" placeholder="Wpisz frazę" #input>
+</mat-form-field>
+<div class="mat-elevation-z8 mb-5">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="person.name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Imie </th>
+        <td mat-cell *matCellDef="let row"> {{row.person.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="person.surname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nazwisko </th>
+        <td mat-cell *matCellDef="let row"> {{row.person.surname}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Uprawnienia </th>
+        <td mat-cell *matCellDef="let row"> {{row.role}} </td>
+      </ng-container>
+
+      <ng-container  matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td  mat-cell *matCellDef="let row" [style.color]="row.status === 'aktywny' ? 'green' : 'red'">{{row.status}}</td>
+      </ng-container>
+
+    <ng-container matColumnDef="detailsButton">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row"> <button class="btn" mat-raised-button color="primary" routerLink="{{row.id}}">Szczegóły</button> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">Brak danych dla danego filtra "{{input.value}}"</td>
+    </tr>
+  </table>
+
+  <mat-paginator [length]="totalCount" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+</div>
+<div>
+  <button type="button" class="btn"  color="primary" mat-raised-button (click)="addDataToDB()">Dodaj rekordy do bazy</button>
+</div>
+

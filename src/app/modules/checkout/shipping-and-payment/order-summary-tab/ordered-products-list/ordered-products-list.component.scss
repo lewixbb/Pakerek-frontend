@@ -1,0 +1,19 @@
+.start {
+  max-width: 60px;
+  min-width: 50px;
+}
+.middle {
+  max-width: calc(100% - 80px - 25%);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.end {
+  max-width: 25%;
+
+}
+.product-name {
+  height: 2.6rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

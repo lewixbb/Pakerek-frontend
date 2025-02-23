@@ -1,0 +1,31 @@
+<ng-container [formGroup]="form">
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>imię</mat-label>
+      <input matInput placeholder="imię" formControlName="name">
+      <mat-error *ngIf="form.controls['name'].invalid">
+        <app-error-message [controls]="form.controls['name']"></app-error-message>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>nazwisko</mat-label>
+      <input matInput placeholder="kowalski" formControlName="surname">
+      <mat-error *ngIf="form.controls['surname'].invalid">
+        <app-error-message [controls]="form.controls['surname']"></app-error-message>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <app-address formGroupName="address"></app-address>
+  </div>
+  <div>
+    <app-phone-control formControlName="phoneNumber">
+      <mat-error class="top-100  ps-0 mat-mdc-form-field-subscript-wrapper mat-mdc-form-field-error-wrapper text-nowrap"
+                 *ngIf="form.get('phoneNumber')?.hasError && (!form.get('phoneNumber')?.pristine || form.get('phoneNumber')?.touched)">
+        <app-error-message [controls]="form.controls['phoneNumber']"></app-error-message>
+      </mat-error>
+    </app-phone-control>
+  </div>
+</ng-container>

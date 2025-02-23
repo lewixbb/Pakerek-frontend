@@ -23,7 +23,7 @@
             <div class="text-end text-nowrap fw-bold pe-1">{{totalPrice | currency :'zł':'code'}}</div>
           </div>
           <div class="m-2 d-flex" *ngIf="basketItems.length">
-            <button class="container me-2" (click)="onClose()" routerLink="/basket" mat-stroked-button color="primary" style="border-width: 2px; border-color: #3F51B5">POKAŻ KOSZYK</button>
+            <button class="container me-2" (click)="onClose()" routerLink="/checkout" mat-stroked-button color="primary" style="border-width: 2px; border-color: #3F51B5">POKAŻ KOSZYK</button>
             <button class="container ms-2" (click)="onClose()" mat-raised-button color="primary">DO KASY</button>
           </div>
         </ng-container>
