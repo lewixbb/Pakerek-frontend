@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationService } from './modules/core/services/navigation.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Pakerek-frontend';
+
+  constructor(public navigation: NavigationService) {
+    this.navigation.startSaveHistory();
+  }
 }

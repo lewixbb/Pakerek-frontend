@@ -1,0 +1,24 @@
+<li class="list-unstyled mb-1 pb-2 d-flex">
+    <div class="start me-3">
+      <img class="img-fluid" src="{{basketItem.products.img}}">
+    </div>
+    <div class="middle">
+      <div class="product-name">
+        {{basketItem.products.name}}
+      </div>
+      <div class="fs-8">
+        ilość: {{basketItem.quantity}}
+      </div>
+    </div>
+    <div class="ms-auto">
+      <div class="text-end fw-bold">
+        {{basketItem.groupPrice | currency : 'zł' : 'code'}}
+      </div>
+      <div class="text-end fs-8">
+        cena za sztukę:
+      </div>
+      <div class="text-end fs-8">
+        {{basketItem.products.price | currency : 'zł' : 'code'}}
+      </div>
+    </div>
+</li>

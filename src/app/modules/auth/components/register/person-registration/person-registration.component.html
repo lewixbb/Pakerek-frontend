@@ -1,0 +1,34 @@
+<div class="fs-4 fw-bold my-5" style="margin-left: 200px">
+  Utwórz nowe konto osobiste
+</div>
+<div class="registration-wrapper">
+  <form [formGroup]="registrationForm" (ngSubmit)="register()">
+    <div class="fs-5 fw-bold my-4">
+      Dane do logowania :
+    </div>
+    <div class="pb-2">
+      <mat-form-field appearance="outline">
+        <mat-label>email</mat-label>
+        <input matInput placeholder="login@example.com" formControlName="email">
+        <mat-error class="pb-2" *ngIf="registrationForm.controls['email'].invalid
+               && registrationForm.controls['email'].touched">
+          <app-error-message [controls]="registrationForm.controls['email']"></app-error-message>
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <app-password-set-form-control formGroupName="passwordSetForm"></app-password-set-form-control>
+      </div>
+    </div>
+    <div class="fs-5 fw-bold mb-4">
+      Dane osobowe :
+    </div>
+    <div>
+      <app-person-form-control formGroupName="person"></app-person-form-control>
+    </div>
+    <button type="submit" [disabled]="registrationForm.invalid" mat-raised-button color="primary" class="btn float-end mb-5">Zarejestruj</button>
+  </form>
+</div>
+
+
+
+

@@ -57,7 +57,7 @@
       "name": "test",
       "amount": 0.1,
       "createdDate": "2024/02/1",
-      "expiryDate": "2024/12/1"
+      "expiryDate": "2025/12/1"
     },
     {
       "id": 2,
@@ -65,6 +65,112 @@
       "amount": 0.1,
       "createdDate": "2024/02/1",
       "expiryDate": "2024/05/1"
+    }
+  ],
+  "shippingMethods": [
+    {
+      "id": 1,
+      "name": "Kurier",
+      "price": 12,
+      "method": "kurier",
+      "deliveryDelay": 1
+    },
+    {
+      "id": 2,
+      "name": "Kurier - za pobraniem",
+      "price": 25,
+      "method": "kurier",
+      "deliveryDelay": 1
+    },
+    {
+      "id": 3,
+      "name": "Poczta Polska",
+      "price": 10,
+      "method": "kurier",
+      "deliveryDelay": 2
+    },
+    {
+      "id": 4,
+      "name": "In-post paczkomat",
+      "price": 11.5,
+      "method": "paczkomat",
+      "deliveryDelay": 1
+    },
+    {
+      "id": 5,
+      "name": "Odbiór osobisty",
+      "price": 0,
+      "method": "osobisty",
+      "deliveryDelay": 0
+    }
+  ],
+  "paymentMethods": [
+    {
+      "id": 1,
+      "name": "Blik",
+      "worksWith": [
+        "kurier",
+        "paczkomat"
+      ],
+      "comments": "Kod BLIK wygenerujesz w swojej aplikacji bankowej."
+    },
+    {
+      "id": 2,
+      "name": "PayU - szybki przelew",
+      "worksWith": [
+        "kurier",
+        "paczkomat"
+      ],
+      "comments": "Aby dokończyć proces płatności, po kliknięciu \"Zamawiam i płacę\", nastąpi przekierowanie do naszego dostawcy usług płatniczych PayU. Pamiętaj, że może być konieczne potwierdzenie transakcji poprzez 3D-Secure, zgodnie z procedurą Twojego banku."
+    },
+    {
+      "id": 3,
+      "name": "Płatność kartą",
+      "worksWith": [
+        "kurier",
+        "paczkomat"
+      ],
+      "comments": "Aby dokończyć proces płatności, po kliknięciu \"Zamawiam i płacę\", nastąpi przekierowanie do naszego dostawcy usług płatniczych PayU. Pamiętaj, że może być konieczne potwierdzenie transakcji poprzez 3D-Secure, zgodnie z procedurą Twojego banku. "
+    },
+    {
+      "id": 4,
+      "name": "PayPal",
+      "worksWith": [
+        "kurier"
+      ],
+      "comments": ""
+    },
+    {
+      "id": 5,
+      "name": "Płatnosć przy odbiorze",
+      "worksWith": [
+        "osobisty"
+      ],
+      "comments": ""
+    }
+  ],
+  "users": [
+    {
+      "email": "12321@231231",
+      "passwordSetForm": {
+        "password": "123",
+        "repeatPassword": "123"
+      },
+      "person": {
+        "name": "321321",
+        "surname": "213321321",
+        "address": {
+          "street": "312321231",
+          "doorNr": "",
+          "postCode": "21-211",
+          "city": "21421421"
+        },
+        "phoneNumber": "+4214421421241"
+      },
+      "blocked": false,
+      "enable": true,
+      "role": 0,
+      "id": 1
     }
   ]
 }

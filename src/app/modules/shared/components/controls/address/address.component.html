@@ -1,0 +1,34 @@
+<ng-container [formGroup]="form">
+  <div>
+    <mat-form-field appearance="outline" class="street">
+      <mat-label>ulica i nr posesji</mat-label>
+      <input matInput placeholder="np ul. Długa 12" formControlName="street">
+      <mat-error *ngIf="form.controls['street'].invalid">
+        <app-error-message [controls]="form.controls['street']"></app-error-message>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="homeNr">
+      <mat-label>nr lokalu</mat-label>
+      <input matInput placeholder="np 1" formControlName="doorNr">
+      <mat-error *ngIf="form.controls['doorNr'].invalid">
+        <app-error-message [controls]="form.controls['doorNr']"></app-error-message>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="postCode">
+      <mat-label>kod pocztowy</mat-label>
+      <app-post-code-control formControlName="postCode" placeholder="00-000"></app-post-code-control>
+      <mat-error *ngIf="form.controls['postCode'].invalid">
+        <app-error-message [controls]="form.controls['postCode']"></app-error-message>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="city">
+      <mat-label>miasto</mat-label>
+      <input matInput placeholder="np Warszawa" formControlName="city">
+      <mat-error *ngIf="form.controls['city'].invalid">
+        <app-error-message [controls]="form.controls['city']"></app-error-message>
+      </mat-error>
+    </mat-form-field>
+  </div>
+</ng-container>
+
+

@@ -1,0 +1,24 @@
+<div role="group"  class="post-code-input-container"
+     [formGroup]="parts"
+     [attr.aria-labelledby]="parentFormField.getLabelId()"
+     (focusin)="onFocusIn($event)"
+     (focusout)="onFocusOut($event)">
+  <input class="prefix"
+         formControlName="prefix"
+         maxlength="2"
+         size="2"
+         oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+         [placeholder]="placeholder.slice(0,2)"
+         (input)="handleInput(parts.controls.prefix, suffix)"
+         #prefix>
+  <span class="post-code-input-spacer">&ndash;</span>
+  <input class="suffix"
+         formControlName="suffix"
+         maxlength="3"
+         size="3"
+         oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+         [placeholder]="placeholder.slice(3,6)"
+         (input)="handleInput(parts.controls.suffix, prefix)"
+         (keyup.backspace)="autoFocusPrev(parts.controls.suffix, prefix)"
+         #suffix>
+</div>

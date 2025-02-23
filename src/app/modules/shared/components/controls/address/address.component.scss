@@ -1,0 +1,17 @@
+.street {
+  width: 75%;
+}
+
+.homeNr {
+  margin-left: 15px;
+  width: calc(100% - 15px - 75%);
+}
+
+.postCode {
+  width: 30%;
+}
+
+.city {
+  margin-left: 15px;
+  width: calc(100% - 15px - 30%);
+}

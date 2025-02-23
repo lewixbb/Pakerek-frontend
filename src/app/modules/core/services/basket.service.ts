@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { Basket, Billing } from '../models/basket.model';
 import { Order } from '../models/order.model';
 import { BillingService } from './billing.service';
+import { shippingMethod } from '../models/shipping.model';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +15,7 @@ export class BasketService {
   private billing: Billing = this._basket?.billing;
   private quantity!: number;
   private discount = 0;
+  private shipping!: shippingMethod;
 
   constructor(private billingService: BillingService) {}
 
@@ -43,6 +45,11 @@ export class BasketService {
 
   addDiscount(discount: number) {
     this.discount = discount;
+    this.dataActuator();
+  }
+
+  addShipping(shipping: shippingMethod) {
+    this.shipping = shipping;
     this.dataActuator();
   }
 

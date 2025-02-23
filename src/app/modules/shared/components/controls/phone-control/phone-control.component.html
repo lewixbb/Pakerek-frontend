@@ -1,0 +1,13 @@
+<mat-form-field appearance="outline" class="prefix">
+  <mat-label>prefix</mat-label>
+  <input matInput placeholder="+48" [formControl]="phoneControl.controls.prefixNumberControl" maxlength="4" oninput="this.value = this.value
+            .replace(/[^0-9\+]/g, '')
+            .replace(/^0{2}/g, '+')
+            .replace(/(\+.*?)\+.*/g, '$1');"
+         (click)="onBlur()">
+  <ng-content></ng-content>
+</mat-form-field>
+<mat-form-field appearance="outline" class="number">
+  <mat-label>nr telefonu</mat-label>
+  <input matInput placeholder="659342222" [formControl]="phoneControl.controls.phoneNumberControl" maxlength="9" oninput="this.value = this.value.replace(/[^0-9]/g, '');" (click)="onBlur()">
+</mat-form-field>

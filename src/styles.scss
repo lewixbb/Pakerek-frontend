@@ -14,7 +14,7 @@ html, body {
 
 body {
   margin:0;
-  font-family: Roboto, "Helvetica Neue", sans-serif
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 Main {
@@ -34,4 +34,12 @@ Main {
 
 .primary {
   color: #3F51B5;
+}
+
+.mdc-checkbox__ripple {
+  display: none !important;
+}
+
+mat-form-field {
+  width: 100%;
 }

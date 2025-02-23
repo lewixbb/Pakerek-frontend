@@ -12,6 +12,7 @@ export class DiscountService {
   private totalCount!: number;
   private today = new Date();
   feedback = new Subject<number>();
+  next$ = new Subject<void>();
 
   constructor(
     private api: DiscountApiService,
