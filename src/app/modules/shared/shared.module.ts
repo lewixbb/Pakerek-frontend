@@ -6,7 +6,6 @@ import { RouterLink } from '@angular/router';
 import { AddRemoveItemPanelComponent } from './components/add-remove-item-panel/add-remove-item-panel.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CustomerDataTabComponent } from './components/customer-data-tab/customer-data-tab.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { CheckboxListComponent } from './components/checkbox-list/checkbox-list.component';
 import { PhoneControlComponent } from './components/controls/phone-control/phone-control.component';
@@ -20,7 +19,6 @@ import { PostCodeControlComponent } from './components/controls/post-code-contro
     ProductTileComponent,
     AddRemoveItemPanelComponent,
     AlertComponent,
-    CustomerDataTabComponent,
     ErrorMessageComponent,
     CheckboxListComponent,
     PhoneControlComponent,
@@ -37,7 +35,6 @@ import { PostCodeControlComponent } from './components/controls/post-code-contro
     AddRemoveItemPanelComponent,
     AlertComponent,
     FormsModule,
-    CustomerDataTabComponent,
     ReactiveFormsModule,
     CheckboxListComponent,
     RouterLink,
