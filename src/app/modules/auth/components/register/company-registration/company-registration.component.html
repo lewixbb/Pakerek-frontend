@@ -1,9 +1,21 @@
 <div style="width: 300px">
   <form (ngSubmit)="send()">
-    <mat-form-field>
-      <input matInput [(ngModel)]="email" name="email">
-    </mat-form-field>
+<!--    <mat-form-field>-->
+<!--      <input matInput [(ngModel)]="email" name="email">-->
+<!--    </mat-form-field>-->
     <button type="submit" mat-raised-button color="primary">wyslij</button>
+  </form>
+  <form (ngSubmit)="test()">
+    <!--    <mat-form-field>-->
+    <!--      <input matInput [(ngModel)]="email" name="email">-->
+    <!--    </mat-form-field>-->
+    <button type="submit" mat-raised-button color="primary">test</button>
+  </form>
+  <form (ngSubmit)="test2()">
+    <!--    <mat-form-field>-->
+    <!--      <input matInput [(ngModel)]="email" name="email">-->
+    <!--    </mat-form-field>-->
+    <button type="submit" mat-raised-button color="primary">test</button>
   </form>
 </div>
 

@@ -13,6 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CheckoutModule } from './modules/checkout/checkout.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { ManagmentModule } from './modules/managment/managment.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { authUserReducer } from './modules/auth/store/auth.reducer';
+import { AuthEffects } from './modules/auth/store/auth.effects';
 
 registerLocaleData(localePl);
 
@@ -30,6 +34,8 @@ registerLocaleData(localePl);
     SharedModule,
     HttpClientModule,
     ManagmentModule,
+    StoreModule.forRoot({ authUser: authUserReducer }),
+    EffectsModule.forRoot([AuthEffects]),
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pl' }],
   bootstrap: [AppComponent],
