@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
-import { UserLoginData } from '../../../core/models/user.model';
-import { AbstractControl, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { LoginData } from '../../../core/models/auth.model';
+import { Store } from '@ngrx/store';
+import * as AuthUserActions from '../../store/auth.action';
+import { AppState } from '../../../../store/app.reducer';
+import { selectAuth, selectAuthUser } from '../../store/auth.selector';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +12,15 @@ import { AbstractControl, NgForm } from '@angular/forms';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  loginData: UserLoginData = { username: '', password: '' };
+  loginData: LoginData = { username: '', password: '' };
   hide = true;
 
-  onLogin(info: NgForm) {
-    // console.log(info.controls?.['password'].errors);
+  constructor(private store: Store<AppState>) {}
+
+  onLogin(login: NgForm) {
+    this.store.dispatch(
+      AuthUserActions.login({ loginData: login.control.getRawValue() })
+    );
+    this.store.select('authUser').subscribe((value) => console.log(value));
   }
 }

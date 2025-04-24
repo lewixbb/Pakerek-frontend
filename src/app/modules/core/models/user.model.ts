@@ -79,6 +79,14 @@ export class UserLoginData {
   constructor(public username: string, public password: string) {}
 }
 
+export class UserLoginResponse {
+  constructor(
+    public username: string,
+    public role: string,
+    public jwtToken: string
+  ) {}
+}
+
 export enum UserStatus {
   INACTIVE = 'nieaktywny',
   ACTIVE = 'aktywny',
@@ -86,6 +94,6 @@ export enum UserStatus {
 }
 
 export enum Roles {
-  user,
-  administrator,
+  user = 'użytkownik',
+  administrator = 'administrator',
 }
